@@ -10,7 +10,7 @@
 void *malloc(size_t size)
 {
 	/* TODO: Implement malloc(). */
-	if (!mem_list_num_items)
+	if (!mem_list_num_items())
 		mem_list_init();
 	void *p = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
 	if (!p)
@@ -25,7 +25,7 @@ void *calloc(size_t nmemb, size_t size)
 {
 	/* TODO: Implement calloc(). */
 	size_t total_size = nmemb * size;
-	if (!mem_list_num_items)
+	if (!mem_list_num_items())
 		mem_list_init();
 	void *p = mmap(NULL, total_size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
 	if (!p)
