@@ -135,8 +135,8 @@ char *strrstr(const char *haystack, const char *needle)
 void *memcpy(void *destination, const void *source, size_t num)
 {
 	/* TODO: Implement memcpy(). */
-	char *dest = destination;
-	char *src = source;
+	char *dest = (char*)destination;
+	char *src = (char*)source;
 	for (size_t i = 0 ; i < num ; i++) {
 		*dest = *src;
 		dest++;
@@ -148,17 +148,36 @@ void *memcpy(void *destination, const void *source, size_t num)
 void *memmove(void *destination, const void *source, size_t num)
 {
 	/* TODO: Implement memmove(). */
+
 	return destination;
 }
 
 int memcmp(const void *ptr1, const void *ptr2, size_t num)
 {
 	/* TODO: Implement memcmp(). */
-	return -1;
+	char *p1 = (char*)ptr1;
+	char *p2 = (char*)ptr2;
+	while (num) {
+		int val = *p1 - *p2;
+		if (val < 0)
+			return -1;
+		if (val > 0)
+			return 1;
+		p1++;
+		p2++;
+		num--;
+	}
+	return 0;
 }
 
 void *memset(void *source, int value, size_t num)
 {
 	/* TODO: Implement memset(). */
+	char *p = (char*)source;
+	while (num) {
+		*p = (unsigned char)value;
+		p++;
+		num--;
+	}
 	return source;
 }

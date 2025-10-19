@@ -7,5 +7,10 @@
 int ftruncate(int fd, off_t length)
 {
 	/* TODO: Implement ftruncate(). */
-	return -1;
+	int r = syscall(__NR_ftruncate, fd, length);
+	if (r < 0) {
+		errno = -r;
+		return -1;
+	}
+	return r;
 }
