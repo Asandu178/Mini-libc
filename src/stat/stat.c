@@ -8,5 +8,10 @@
 int stat(const char *restrict path, struct stat *restrict buf)
 {
 	/* TODO: Implement stat(). */
-	return -1;
+	int rc = syscall(__NR_stat, path, buf);
+	if (rc < 0) {
+		errno = -rc;
+		return -1;
+	}
+	return rc;
 }
