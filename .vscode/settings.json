@@ -2,6 +2,10 @@
     "files.associations": {
         "fcntl.h": "c",
         "stat.h": "c",
-        "syscall.h": "c"
+        "syscall.h": "c",
+        "stddef.h": "c",
+        "compare": "c",
+        "unistd.h": "c",
+        "time.h": "c"
     }
 }
