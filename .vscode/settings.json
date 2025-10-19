@@ -6,6 +6,10 @@
         "stddef.h": "c",
         "compare": "c",
         "unistd.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "types.h": "c",
+        "mem_list.h": "c",
+        "essentials.h": "c",
+        "string.h": "c"
     }
 }
