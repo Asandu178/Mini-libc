@@ -1,5 +1,5 @@
-#ifndef TIME_H
-#define TIME_H
+#ifndef __TIME_H__
+#define __TIME_H__ 1
 
 
 struct timespec {
