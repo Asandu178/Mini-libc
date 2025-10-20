@@ -106,7 +106,7 @@ char *strrchr(const char *str, int c)
 	for ( ; *str != '\0' ; str++)
 		if (*str == (char)c)
 			res = str;
-	return res;
+	return (char*)res;
 }
 
 char *strstr(const char *haystack, const char *needle)
@@ -129,7 +129,7 @@ char *strrstr(const char *haystack, const char *needle)
 		if (strncmp(haystack, needle, req) == 0)
 			str = haystack;
 	}
-	return str;
+	return (char*)str;
 }
 
 void *memcpy(void *destination, const void *source, size_t num)

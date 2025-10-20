@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include <stdlib.h>
+#include "./string.h"
 
 int puts(const char *c) {
     int rc = 0;
