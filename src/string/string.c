@@ -17,7 +17,7 @@ char *strncpy(char *destination, const char *source, size_t len)
 {
 	/* TODO: Implement strncpy(). */
 	char *c = destination;
-	for (int i = 0 ; i < len ; i++ , c++, source++) {
+	for (size_t i = 0 ; i < len ; i++ , c++, source++) {
 		*c = *source;
 	}
 	return destination;
@@ -95,14 +95,14 @@ char *strchr(const char *str, int c)
 	/* TODO: Implement strchr(). */
 	for ( ; *str != '\0' ; str++)
 		if (*str == (char)c)
-			return str;
+			return (char*)str;
 	return NULL;
 }
 
 char *strrchr(const char *str, int c)
 {
 	/* TODO: Implement strrchr(). */
-	char *res = NULL;
+	const char *res = NULL;
 	for ( ; *str != '\0' ; str++)
 		if (*str == (char)c)
 			res = str;
@@ -115,7 +115,7 @@ char *strstr(const char *haystack, const char *needle)
 	size_t req = strlen(needle);
 	for ( ; *haystack != '\0' ; haystack++) {
 		if (strncmp(haystack, needle, req) == 0)
-			return haystack;
+			return (char*)haystack;
 	}
 	return NULL;
 }
@@ -124,7 +124,7 @@ char *strrstr(const char *haystack, const char *needle)
 {
 	/* TODO: Implement strrstr(). */
 	size_t req = strlen(needle);
-	char *str = NULL;
+	const char *str = NULL;
 	for ( ; *haystack != '\0' ; haystack++) {
 		if (strncmp(haystack, needle, req) == 0)
 			str = haystack;
