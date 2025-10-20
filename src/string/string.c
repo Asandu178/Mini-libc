@@ -148,7 +148,16 @@ void *memcpy(void *destination, const void *source, size_t num)
 void *memmove(void *destination, const void *source, size_t num)
 {
 	/* TODO: Implement memmove(). */
+	char *dest = (char*)destination;
+	char *src = (char*)source;
 
+	if (dest < src) {
+		for (size_t i = 0 ; i < num ; i++)
+			dest[i] = src[i];
+	} else {
+		for (size_t i = num; i > 0 ; i--)
+			dest[i - 1] = src[i - 1];
+	}
 	return destination;
 }
 
