@@ -42,7 +42,6 @@ void free(void *ptr)
 	struct mem_list *l = mem_list_find(ptr);
 	munmap(l->start, l->len);
 	mem_list_del(ptr);
-
 }
 
 void *realloc(void *ptr, size_t size)

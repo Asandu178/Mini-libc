@@ -11,5 +11,4 @@ int puts(const char *c) {
     if (rc < 0)
         return -1;
     return 0;
-    
 }

@@ -1,5 +1,4 @@
 /* SPDX-License-Identifier: BSD-3-Clause */
-
 #ifndef __STDIO_H__
 #define __STDIO_H__	1
 

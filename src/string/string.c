@@ -103,7 +103,7 @@ char *strrchr(const char *str, int c)
 {
 	/* TODO: Implement strrchr(). */
 	char *res = NULL;
-	for ( ; *str != '\0' ; str++) 
+	for ( ; *str != '\0' ; str++)
 		if (*str == (char)c)
 			res = str;
 	return res;
